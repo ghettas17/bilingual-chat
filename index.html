@@ -1,0 +1,39 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bilingual Chat (Demo)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Bilingual Chat (Demo)</h1>
+      <div class="right">
+        <label>
+          Auto‑Translate
+          <input id="autoTranslate" type="checkbox" checked>
+        </label>
+        <select id="targetLang">
+          <option value="en">English</option>
+          <option value="ar">العربية</option>
+          <option value="fr">Français</option>
+        </select>
+      </div>
+    </header>
+    <section class="info">
+      <p><strong>Tip:</strong> Open this page in <em>two tabs</em> and give each one a different <code>?userId=Ali</code> / <code>?userId=Mike</code> query in the URL.</p>
+      <p>Messages will be translated per‑recipient when Auto‑Translate is on. This demo uses a <em>mock translator</em> so you can test instantly offline.</p>
+    </section>
+    <main id="messages" dir="ltr"></main>
+    <footer>
+      <input id="input" placeholder="Type a message…">
+      <button id="send">Send</button>
+    </footer>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="client.js"></script>
+</body>
+</html>
